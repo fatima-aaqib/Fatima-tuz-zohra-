@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Safeguard for browser extensions attempting to assign window.fetch
+      try {
+        let _customFetch = window.fetch;
+        Object.defineProperty(window, 'fetch', {
+          get: function() { return _customFetch; },
+          set: function(val) { _customFetch = val; },
+          configurable: true,
+          enumerable: true
+        });
+      } catch (err) {}
+
+      // Suppress third-party chrome extension runtime errors
+      window.addEventListener('error', function(event) {
+        if (event && event.filename && event.filename.indexOf('chrome-extension:') === 0) {
+          event.stopImmediatePropagation();
+        }
+      });
+    </script>
+    <title>Fatima Tuz Zohra – Data Analyst & AI Portfolio</title>
+    <meta name="description" content="Portfolio of Fatima Tuz Zohra: Data Analyst, AI Enthusiast, and Business Analytics Student specializing in Generative AI, Python, RAG, and intelligent solutions." />
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Fatima Tuz Zohra – Data Analyst & AI Portfolio" />
+    <meta property="og:description" content="I turn data into meaningful insights and build intelligent AI-powered solutions that solve real-world problems." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Fatima Tuz Zohra Portfolio" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fatima Tuz Zohra – Data Analyst & AI Portfolio" />
+    <meta name="twitter:description" content="I turn data into meaningful insights and build intelligent AI-powered solutions that solve real-world problems." />
+
+    <!-- Google Fonts: Syne (Display), Plus Jakarta Sans (Body), JetBrains Mono (Data/Tech) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Person JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Fatima Tuz Zohra",
+      "jobTitle": "Data Analyst with AI",
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "DHA Suffa University"
+      },
+      "alumniOf": "DHA Suffa University",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Karachi",
+        "addressCountry": "Pakistan"
+      },
+      "knowsAbout": [
+        "Data Analytics",
+        "Business Analytics",
+        "Artificial Intelligence",
+        "Generative AI",
+        "Agentic AI",
+        "RAG",
+        "Python",
+        "React",
+        "Next.js"
+      ],
+      "description": "Business Analytics student and aspiring Data Analyst with AI, building intelligent AI-powered solutions and data insights."
+    }
+    </script>
+  </head>
+  <body class="bg-[#0c0a09] text-stone-100 antialiased selection:bg-[#c28b5e]/35 selection:text-[#faeedd]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
